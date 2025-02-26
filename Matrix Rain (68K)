@@ -1,0 +1,61 @@
+; filepath: /c:/Users/brady/Documents/GitHub/TI89-Titanium-Experiments/Matrix Rain (68K)
+    .section .text
+    .global _main
+
+_main:
+    ; Initialize the screen
+    jsr _clrScr
+
+    ; Initialize variables
+    move.l #0, d0          ; x position
+    move.l #0, d1          ; y position
+    move.l #0, d2          ; random character
+    move.l #0, d3          ; loop counter
+
+main_loop:
+    ; Generate random x position (0-159)
+    jsr _rand
+    andi.l #159, d0
+
+    ; Generate random y position (0-99)
+    jsr _rand
+    andi.l #99, d1
+
+    ; Generate random ASCII character (33-126)
+    jsr _rand
+    andi.l #93, d2
+    addi.l #33, d2
+
+    ; Draw the character at (x, y)
+    move.l d0, -(sp)
+    move.l d1, -(sp)
+    move.l d2, -(sp)
+    jsr _drawChar
+    addq.l #12, sp
+
+    ; Delay loop
+    move.l #100000, d3
+delay_loop:
+    subq.l #1, d3
+    bne delay_loop
+
+    ; Clear the screen
+    jsr _clrScr
+
+    ; Loop indefinitely
+    bra main_loop
+
+; Function to clear the screen
+_clrScr:
+    ; Clear the screen code here
+    rts
+
+; Function to draw a character at (x, y)
+_drawChar:
+    ; Draw character code here
+    rts
+
+; Function to generate a random number
+_rand:
+    ; Random number generation code here
+    rts
