@@ -1,0 +1,20 @@
+Prgm
+Local x, y, char, speed, i
+ClrHome
+speed := 0.1 // Adjust speed as needed
+
+// Define a set of custom characters that resemble Katakana or Kanji
+Local customChars
+customChars := {"ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "ケ", "コ"}
+
+While 1
+  For i, 1, 20 // Number of raindrops
+    x := rand(1, 16) // Random x position (1-16 for 160 pixels wide)
+    y := rand(1, 10) // Random y position (1-10 for 100 pixels tall)
+    char := customChars[rand(1, dim(customChars))] // Random custom character
+    Text y*10, x*10, char // Draw character at (x, y)
+  EndFor
+  Pause speed
+  ClrHome
+EndWhile
+EndPrgm

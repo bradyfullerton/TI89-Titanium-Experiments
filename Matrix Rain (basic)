@@ -1,0 +1,14 @@
+Prgm
+Local x, y, chars, speed, i
+ClrHome
+speed := 0.001 // Adjust speed as needed
+While 1=1
+  For i, 1, 20 // Number of raindrops
+    x := (rand(32)) * 5 // Random x position (0, 5, 10, ..., 155)
+    y := (rand(14)) * 7 // Random y position (0, 7, 14, ..., 98)
+    chars := char(rand(94) + 33) // Random ASCII character (33-126)
+    Output y, x , chars // Draw character at (x, y)
+  EndFor
+  ClrHome
+EndWhile
+EndPrgm
