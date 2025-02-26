@@ -1,14 +1,26 @@
 Prgm
-Local x, y, chars, speed, i
+Local x, y, chars, speed, i, drops
 ClrHome
-speed := 0.001 // Adjust speed as needed
+0.1 → speed // Adjust speed as needed
+
+// Initialize raindrop positions
+dim(drops, 16)
+For i, 1, 16
+  0 → drops[i]
+EndFor
+
 While 1=1
-  For i, 1, 20 // Number of raindrops
-    x := (rand(32)) * 5 // Random x position (0, 5, 10, ..., 155)
-    y := (rand(14)) * 7 // Random y position (0, 7, 14, ..., 98)
-    chars := char(rand(94) + 33) // Random ASCII character (33-126)
-    Output y, x , chars // Draw character at (x, y)
+  For i, 1, 16 // Number of raindrops
+    i * 5 → x // Fixed x position (5, 10, ..., 80)
+    drops[i] * 7 → y // Current y position
+    char(rand(94) + 33) → chars // Random ASCII character (33-126)
+    Output y, x, chars // Draw character at (x, y)
+    drops[i] + 1 → drops[i] // Move raindrop down
+    If drops[i] > 14 Then // Reset raindrop if it goes off screen
+      0 → drops[i]
+    EndIf
   EndFor
+  Pause speed
   ClrHome
 EndWhile
 EndPrgm
