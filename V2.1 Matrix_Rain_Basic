@@ -1,0 +1,22 @@
+Prgm
+Local wide, tall, x, y, a, b, char, i, j, length
+{0,8,16,24,32,40,48,56,64,72,80,88,96,104,112,120,128,136,144,152} → wide
+{0,10,20,30,40,50,60} → tall
+ClrHome
+While 1=1
+  rand(20) → a
+  rand(7) → b
+  tall[b] → y
+  wide[a] → x
+  rand(4) + 7 → length
+  Output y, x, char(rand(250))
+  For i, 10, length * 10, 10
+    Output min(60, y + i), x, char(rand(250))
+  EndFor
+  For i, 10, 60, 10
+    Output max(0, y - i), x, " "
+  EndFor
+  For j, 1, 100
+  EndFor
+EndWhile
+EndPrgm
