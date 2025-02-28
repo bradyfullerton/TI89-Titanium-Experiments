@@ -1,0 +1,62 @@
+()
+Prgm
+Local wide,tall,x,y,a,b,pr,er
+{0,8,16,24,32,40,48,56,64,72,80,88,96,104,112,120,128,136,144,152}→wide
+{0,10,20,30,40,50,60}→tall
+
+ClrHome
+While 1=1
+rand(20)→a
+rand(7)→b
+tall[b]→y
+wide[a]→x
+Output y,x,char(rand(250))
+Output y,x,char(rand(250))
+Output y,x,char(rand(250))
+Output y,x,char(rand(250))
+Output y,x,char(rand(250))
+Output y,x,char(rand(250))
+
+(rand(4))→pr
+(rand(4))→er
+
+If pr = 1 Then
+
+Output min(60,y+0),x,char(rand(250))
+Output min(60,y+10),x,char(rand(250))
+Output min(60,y+20),x,char(rand(250))
+Output min(60,y+30),x,char(rand(250))
+
+EndIf
+
+If pr = 2 Then
+
+Output min(60,y+30),x,char(rand(250))
+Output min(60,y+40),x,char(rand(250))
+Output min(60,y+50),x,char(rand(250))
+Output min(60,y+60),x,char(rand(250))
+
+EndIf
+
+If pr = 3 Then
+
+Output min(60,y+0),x,char(rand(250))
+Output min(60,y+10),x,char(rand(250))
+Output min(60,y+20),x,char(rand(250))
+Output min(60,y+30),x,char(rand(250))
+Output min(60,y+40),x,char(rand(250))
+Output min(60,y+50),x,char(rand(250))
+Output min(60,y+60),x,char(rand(250))
+
+EndIf
+
+If pr = 4 Then
+
+Output min(60,y+20),x,char(rand(250))
+Output min(60,y+30),x,char(rand(250))
+Output min(60,y+40),x,char(rand(250))
+
+EndIf
+
+EndWhile
+EndPrgm
