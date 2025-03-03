@@ -9,7 +9,7 @@ Local wide,tall,x,y,i,j,numlin,xlist,chars,len,head,oldtail,newtail,active
 ClrHome
 
 While 1=1
-  10=>numlin
+  13=>numlin
 
   newList(numlin)=>xlist
   newList(numlin)=>len
